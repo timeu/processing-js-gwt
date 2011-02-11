@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- Build file based on gwtp's build file (http://code.google.com/p/gwt-platform/) -->
+	
 <project name="Processing" default="build" basedir=".">
 
   <property name="version.num" value="0.1"/>
@@ -11,7 +13,7 @@
   <property name="extlib.folder" location="../gwt-libs" />
   <property name="gwt.folder" location="${extlib.folder}/gwt" />
   <property name="manifest.file" value="MANIFEST.MF"/>
-  <property name="all.gwtp.jar.files" value="**/gwtp*.jar"/>
+  <property name="all.processing.jar.files" value="**/processing-js-gwt*.jar"/>
   <condition property="version-suffix" value="-b${env.BUILD_NUMBER}" else="-bLOCAL">
     <isset property="env.BUILD_NUMBER"/>
   </condition>
@@ -58,7 +60,7 @@
     <delete dir="${out.classes.folder}" failonerror="false" />
     <delete dir="${out.test.src.folder}" failonerror="false" />
     <delete failonerror="false">
-      <fileset dir="." includes="${all.gwtp.jar.files}" />
+      <fileset dir="." includes="${all.processing.jar.files}" />
       <fileset dir="." includes="**/*.zip"/>
       <fileset dir="." includes="**/*.orig"/>
       <fileset dir="${in.src.folder}" includes="**/*.class" />
@@ -97,11 +99,11 @@
 
 	
   <target name="package" depends="clean" description="Package everything into a zip file.">
-    <zip destfile="gwtp-${version.num}-SNAPSHOT.zip" basedir="." excludes="**/*.zip,**/.git/**,**/.settings/**,**/.project,**/.classpath" />
+    <zip destfile="processing-js-gwt-${version.num}-SNAPSHOT.zip" basedir="." excludes="**/*.zip,**/.git/**,**/.settings/**,**/.project,**/.classpath" />
   </target>
 
   <target name="package.release" depends="clean" description="Package everything into a zip file.">
-    <zip destfile="gwtp-${version.num}.zip" basedir="." excludes="**/*.zip,**/.git/**,**/.settings/**,**/.project,**/.classpath" />
+    <zip destfile="processing-js-gwt-${version.num}.zip" basedir="." excludes="**/*.zip,**/.git/**,**/.settings/**,**/.project,**/.classpath" />
   </target>
 	
 </project>
