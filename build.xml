@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="Processing" default="build" basedir=".">
+
+  <property name="version.num" value="0.1"/>
+  <property environment="env"/>
+  <property name="in.src.folder" location="src" />
+  <property name="in.test.folder" location="test" />
+  <property name="out.classes.folder" location="war/WEB-INF/classes" />
+  <property name="lib.folder" location="lib" />
+  <property name="warlib.folder" location="war/WEB-INF/lib" />
+  <property name="extlib.folder" location="../gwt-libs" />
+  <property name="gwt.folder" location="${extlib.folder}/gwt" />
+  <property name="manifest.file" value="MANIFEST.MF"/>
+  <property name="all.gwtp.jar.files" value="**/gwtp*.jar"/>
+  <condition property="version-suffix" value="-b${env.BUILD_NUMBER}" else="-bLOCAL">
+    <isset property="env.BUILD_NUMBER"/>
+  </condition>
+  <tstamp>
+    <format property="today.timestamp" pattern="yyyy-MM-dd HH:mm:ss" />
+  </tstamp>  
+
+  <path id="project.class.path">
+    <fileset dir="${warlib.folder}" includes="**/*.jar,**/*.class" />
+    <pathelement location="${out.classes.folder}" />
+    <pathelement location="${gwt.folder}/gwt-user.jar"/>
+    <fileset dir="${gwt.folder}" includes="gwt-dev*.jar"/>
+  </path>
+
+	<path id="jar.files">
+    <fileset dir="${out.classes.folder}" includes="**/*.class"  />
+    <fileset dir="${in.src.folder}" includes="**/*.java"  />
+    <fileset dir="${in.src.folder}" includes="**/*.xml"  />
+	<fileset dir="${in.src.folder}" includes="**/*.js"  />
+    <fileset dir="." includes="META-INF/**" />
+	</path>
+
+    	
+  <target name="javac" description="Compile java source (without external dependencies)">
+    <mkdir dir="${out.classes.folder}" />
+    <javac srcdir="${in.src.folder}" includes="**" includeantruntime="false"  encoding="utf-8" destdir="${out.classes.folder}" source="1.6" target="1.6"  nowarn="true" debug="true" debuglevel="lines,vars,source">
+      <!-- Do not use any annotation processor -->
+      <compilerarg value="-proc:none" />
+      <classpath refid="project.class.path" />
+    </javac>
+    <copy todir="${out.classes.folder}">
+      <fileset dir="${in.src.folder}" includes="**/*.class" />
+    </copy>
+    <delete dir="${in.src.folder}" includes="**/*.class" failonerror="false" />
+  </target>
+  	
+  <target name="build" depends="javac" description="Build this project" />
+
+  <target name="all" depends="jar" description="Build, test and package" />
+
+  <target name="clean" description="Cleans this project">
+    <delete file="${manifest.file}" failonerror="false" />
+    <delete dir="${report.folder}" failonerror="false" />
+    <delete dir="${out.classes.folder}" failonerror="false" />
+    <delete dir="${out.test.src.folder}" failonerror="false" />
+    <delete failonerror="false">
+      <fileset dir="." includes="${all.gwtp.jar.files}" />
+      <fileset dir="." includes="**/*.zip"/>
+      <fileset dir="." includes="**/*.orig"/>
+      <fileset dir="${in.src.folder}" includes="**/*.class" />
+      <fileset dir="${in.test.folder}" includes="**/*.class" />
+    </delete>
+  </target>
+
+
+  <target name="jar.manifest" description="Package into a jar">
+    <manifest file="${manifest.file}">
+      <attribute name="Built-By" value="Uemit Seren (GMI)"/>
+      <attribute name="Implementation-Version" value="${version.num}${version-suffix}"/> 
+      <attribute name="Built-Date" value="${today.timestamp}"/>        
+    </manifest>
+  </target>
+	
+  <target name="jar.manifest.release" description="Package into a jar">
+    <manifest file="${manifest.file}">
+      <attribute name="Built-By" value="Uemit Seren (GMI)"/>
+      <attribute name="Implementation-Version" value="${version.num}"/> 
+      <attribute name="Built-Date" value="${today.timestamp}"/>        
+    </manifest>
+  </target>
+	
+  <target name="jar" depends="jar.manifest,javac" description="Package into a jar">
+    <jar jarfile="processing-js-gwt-${version.num}-SNAPSHOT.jar" manifest="${manifest.file}">
+      <path refid="jar.files" />
+    </jar>
+  </target>
+		
+  <target name="release" depends="jar.manifest.release,javac" description="Build the jar for a release">
+    <jar jarfile="processing-js-gwt-${version.num}.jar" manifest="${manifest.file}">
+      <path refid="jar.files" />
+    </jar>
+  </target>
+
+	
+  <target name="package" depends="clean" description="Package everything into a zip file.">
+    <zip destfile="gwtp-${version.num}-SNAPSHOT.zip" basedir="." excludes="**/*.zip,**/.git/**,**/.settings/**,**/.project,**/.classpath" />
+  </target>
+
+  <target name="package.release" depends="clean" description="Package everything into a zip file.">
+    <zip destfile="gwtp-${version.num}.zip" basedir="." excludes="**/*.zip,**/.git/**,**/.settings/**,**/.project,**/.classpath" />
+  </target>
+	
+</project>
