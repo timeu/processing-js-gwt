@@ -10,8 +10,7 @@
   <property name="out.classes.folder" location="war/WEB-INF/classes" />
   <property name="lib.folder" location="lib" />
   <property name="warlib.folder" location="war/WEB-INF/lib" />
-  <property name="extlib.folder" location="../gwt-libs" />
-  <property name="gwt.folder" location="${extlib.folder}/gwt" />
+  <property name="gwt.folder" location="${lib.folder}/gwt" />
   <property name="manifest.file" value="MANIFEST.MF"/>
   <property name="all.processing.jar.files" value="**/processing-js-gwt*.jar"/>
   <condition property="version-suffix" value="-b${env.BUILD_NUMBER}" else="-bLOCAL">
@@ -92,7 +91,7 @@
   </target>
 		
   <target name="release" depends="jar.manifest.release,javac" description="Build the jar for a release">
-    <jar jarfile="processing-js-gwt-${version.num}.jar" manifest="${manifest.file}">
+    <jar jarfile="processing-js-gwt.jar" manifest="${manifest.file}">
       <path refid="jar.files" />
     </jar>
   </target>
