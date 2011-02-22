@@ -27,7 +27,19 @@
   
   processing-js-gwt is a thin Google Web Toolkit (GWT) wrapper which allows
   to use processingjs sketches in GWT applications. 
-    
+  
+  
+  //////////////////////////////////////////////////////////////////////////////
+  
+  PLATFORM AND BROWSER COMPATIBILITY
+  
+  For browser compatiblity refer to the processing.js compatiblity.     
+       
+  In general this wrapper works with browser that support the HTML5 canvas element. 
+  In case of Microsoft's IE this only applies to the Internet Explorer 9.0.
+  
+  //////////////////////////////////////////////////////////////////////////////
+  
   
   //////////////////////////////////////////////////////////////////////////////
 
