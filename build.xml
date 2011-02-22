@@ -32,6 +32,10 @@
     <fileset dir="${in.src.folder}" includes="**/*.xml"  />
 	<fileset dir="${in.src.folder}" includes="**/*.js"  />
     <fileset dir="." includes="META-INF/**" />
+	<fileset dir=".">
+	   <include name="LICENSE" />
+	   <include name="README" />
+	</fileset>
 	</path>
 
     	
