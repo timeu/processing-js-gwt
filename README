@@ -1,1 +1,38 @@
+  P R O C E S S I N G  - J S  - G W T  - 0.1.0
+  a GWT wrapper for the processing-js library
 
+  //////////////////////////////////////////////////////////////////////////////
+
+  License           MIT (see included LICENSE)
+  Original Author   Ümit Seren
+  
+
+  Web Site          -  
+  Github Repo.      https://github.com/timeu/processing-js-gwt
+  Bug Tracking      -
+  Test Suite        -
+
+  
+  //////////////////////////////////////////////////////////////////////////////
+  
+  ACKNOWLEDGMENT & THIRD PARTY LIBRARIES  
+    
+    - processing.js  by John Resig (http://processingjs.org)
+    - Google Web Toolkit (GWT) by Google (http://code.google.com/webtoolkit/)
+
+  
+  //////////////////////////////////////////////////////////////////////////////
+  
+  INTRODUCTION 
+  
+  processing-js-gwt is a thin Google Web Toolkit (GWT) wrapper which allows
+  to use processingjs sketches in GWT applications. 
+    
+  
+  //////////////////////////////////////////////////////////////////////////////
+
+  USAGE
+  
+  to be written
+  
+  //////////////////////////////////////////////////////////////////////////////
