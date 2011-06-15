@@ -1,5 +1,6 @@
 package com.processingjs.client;
 
+import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
@@ -9,7 +10,6 @@ import com.google.gwt.resources.client.ExternalTextResource;
 import com.google.gwt.resources.client.ResourceCallback;
 import com.google.gwt.resources.client.ResourceException;
 import com.google.gwt.resources.client.TextResource;
-import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -20,19 +20,17 @@ public class Processing <I extends ProcessingInstance> extends Widget  {
 	protected String url;
 	protected I p_instance;
 	protected boolean isLoaded = false;
+	protected Canvas canvas;
 	
 	public Processing() {
 		super();
-		Element elem = createElement();
-		setElement(createElement());
-		elem.setId(DOM.createUniqueId());
+		canvas = createElement();
+		setElement(canvas.getElement());
 	}
 	
-	
-	
-	protected native CanvasElement createElement() /*-{
-    	return $doc.createElement("canvas");
-	}-*/;
+	protected Canvas createElement() {
+    	return canvas = Canvas.createIfSupported();
+	}
 	
 	
 	public void loadFromUrl(String url,final Runnable onLoad) throws RequestException 
@@ -93,9 +91,14 @@ public class Processing <I extends ProcessingInstance> extends Widget  {
 	protected native I init(String programm,Element elem) /*-{
 		
 		instance = new $wnd.Processing(elem,programm);
-		$wnd.Processing.addInstance(instance);
+		//$wnd.Processing.addInstance(instance);
 		return instance;
 	}-*/;
+	
+	
+	public Canvas getCanvas() {
+		return canvas;
+	}
 }
 
 
