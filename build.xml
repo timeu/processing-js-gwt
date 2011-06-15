@@ -3,7 +3,7 @@
 	
 <project name="Processing" default="build" basedir=".">
 
-  <property name="version.num" value="0.1"/>
+  <property name="version.num" value="0.2.0"/>
   <property environment="env"/>
   <property name="in.src.folder" location="src" />
   <property name="in.test.folder" location="test" />
@@ -52,7 +52,7 @@
     <delete dir="${in.src.folder}" includes="**/*.class" failonerror="false" />
   </target>
   	
-  <target name="build" depends="javac" description="Build this project" />
+  <target name="build" depends="clean,javac" description="Build this project" />
 
   <target name="all" depends="jar" description="Build, test and package" />
 
@@ -87,13 +87,13 @@
     </manifest>
   </target>
 	
-  <target name="jar" depends="jar.manifest,javac" description="Package into a jar">
+  <target name="jar" depends="clean,jar.manifest,javac" description="Package into a jar">
     <jar jarfile="processing-js-gwt-${version.num}-SNAPSHOT.jar" manifest="${manifest.file}">
       <path refid="jar.files" />
     </jar>
   </target>
 		
-  <target name="release" depends="jar.manifest.release,javac" description="Build the jar for a release">
+  <target name="release" depends="clean,jar.manifest.release,javac" description="Build the jar for a release">
     <jar jarfile="processing-js-gwt.jar" manifest="${manifest.file}">
       <path refid="jar.files" />
     </jar>
