@@ -1,3 +1,8 @@
+June 14, 2011 - Release 0.2.0
+    * Processing library updated to 1.2.1
+    * Use GWT Canvas Widget instead of CanvasElement (GWT > 2.2 required)
+    * build.xml file modified to call clean before release and build
+
 February 14, 2011 - Release 0.1.0
 
     * Initial Version
