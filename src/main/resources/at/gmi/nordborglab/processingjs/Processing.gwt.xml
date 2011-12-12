@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='processing'>
+   <inherits name='com.google.gwt.user.User'/>
+   <source path='client'/>
+   <script src="processing.js"></script>  
+</module>
+
