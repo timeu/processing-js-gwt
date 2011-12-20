@@ -62,8 +62,8 @@
     </resources>
   </build>
   <scm>
-  	<url>https://timeu@github.com/timeu/processing-js-gwt.git</url>
-  	<connection>https://timeu@github.com/timeu/processing-js-gwt.git</connection>
-  	<developerConnection>https://timeu@github.com/timeu/processing-js-gwt.git</developerConnection>
+  	<url>https://timeu@github.com/timeu/processing-js-gwt</url>
+  	<connection>scm:git:https://timeu@github.com/timeu/processing-js-gwt.git</connection>
+  	<developerConnection>scm:git:https://timeu@github.com/timeu/processing-js-gwt.git</developerConnection>
   </scm>
 </project>
