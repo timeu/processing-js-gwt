@@ -14,7 +14,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <gwtVersion>2.4.0</gwtVersion>
+    <gwtVersion>2.5.0-rc2</gwtVersion>
     <github.maven.repository>file:///srv/uemit.seren/repository/maven-repository/</github.maven.repository>
   </properties>
 
