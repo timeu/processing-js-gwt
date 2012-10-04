@@ -1,3 +1,7 @@
+October 4, 2012 - Release 0.6.1
+    * Processing library updated to 1.4.1
+    * Pom.xml updated: GWT version updated to 2.5.0-rc2
+
 December 20, 2011 - Release 0.6.0
     * build.xml removed
     * SCM in pom.xml file fixed
