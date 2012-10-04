@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>at.gmi.nordborglab</groupId>
   <artifactId>processingjs</artifactId>
-  <version>0.6.1</version>
+  <version>0.6.2-SNAPSHOT</version>
   <name>processingjs</name>
   
    <parent>
