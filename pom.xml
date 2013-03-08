@@ -14,17 +14,11 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <gwtVersion>2.5.0-rc2</gwtVersion>
+    <gwtVersion>2.5.1-rc1</gwtVersion>
   </properties>
 
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.7</version>
-      <scope>test</scope>
-    </dependency>
     <dependency>
       <groupId>com.google.gwt</groupId>
       <artifactId>gwt-user</artifactId>
