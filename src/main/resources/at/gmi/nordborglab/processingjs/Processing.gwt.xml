@@ -2,6 +2,5 @@
 <module rename-to='processing'>
    <inherits name='com.google.gwt.user.User'/>
    <source path='client'/>
-   <script src="processing.js"></script>  
 </module>
 
