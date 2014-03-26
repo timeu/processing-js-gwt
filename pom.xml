@@ -14,7 +14,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <gwtVersion>2.5.1-rc1</gwtVersion>
+    <gwtVersion>2.5.1</gwtVersion>
   </properties>
 
 

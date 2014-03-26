@@ -1,5 +1,5 @@
-March 4, 2012 - Release 0.6.2
-    * Pom.xml updated: GWT version updated to 2.5.1-rc1
+March 26, 2014 - Release 0.6.2
+    * Pom.xml updated: GWT version updated to 2.5.1
     * Use ScriptInjector to inject script -> support for xsiframe linker
 
 October 4, 2012 - Release 0.6.1
