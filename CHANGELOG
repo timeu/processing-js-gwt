@@ -1,3 +1,8 @@
+August 10, 2015 - Release 1.0.0
+    * Processing library updated to 1.4.8
+    * Added a sample app and added a GWTTestCase
+    * Changed ProcessingInstance to use new JSInterop (@JsType)
+
 March 26, 2014 - Release 0.6.2
     * Pom.xml updated: GWT version updated to 2.5.1
     * Use ScriptInjector to inject script -> support for xsiframe linker
