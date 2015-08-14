@@ -42,7 +42,6 @@ public class ProcessingTest extends GWTTestCase {
 
     public void testCreateAndCheckCanvasExists() {
         Processing<MyProcessingInstance> widget = new Processing<>();
-        assertNotNull(widget.getCanvas());
         assertEquals(widget.isLoaded(),false);
         assertEquals(widget.isInjected(),true);
         assertNull(widget.getInstance());
@@ -66,7 +65,6 @@ public class ProcessingTest extends GWTTestCase {
         assertEquals(widget.isInjected(),true);
         assertEquals(widget.isLoaded(),true);
         assertNotNull("Processing instance is null",widget.getInstance());
-        assertNotNull("Canvas is null", widget.getCanvas());
     }
 
 }

@@ -3,6 +3,7 @@ package com.github.timeu.gwtlibs.processingjsgwt.client;
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.core.client.ScriptInjector;
 import com.google.gwt.core.shared.GWT;
+import com.google.gwt.dom.client.Document;
 import com.google.gwt.http.client.Request;
 import com.google.gwt.http.client.RequestBuilder;
 import com.google.gwt.http.client.RequestCallback;
@@ -33,15 +34,13 @@ public class Processing <I extends ProcessingInstance> extends Widget  {
 	
 	protected I pInstance;
 	protected boolean isLoaded = false;
-	protected final Canvas canvas;
 
     /**
      * Creates a Processing widget
      */
 	public Processing() {
 		injectScript();
-		canvas = Canvas.createIfSupported();
-		setElement(canvas.getElement());
+		setElement(Document.get().createCanvasElement());
 	}
 
     /**
@@ -134,15 +133,7 @@ public class Processing <I extends ProcessingInstance> extends Widget  {
 	}-*/;
 
 
-    /**
-     * Provides access to the Canvas widget
-     *
-     * @return the {@link Canvas} widget
-     */
-	public Canvas getCanvas() {
-		return canvas;
-	}
-	
+
 	private void injectScript() {
 		if (!isInjected()) {
 			ScriptInjector.fromString(ProcessingClientBundle.INSTANCE.processingjs().getText()).setWindow(ScriptInjector.TOP_WINDOW).inject();
