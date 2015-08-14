@@ -44,7 +44,7 @@ processing.load(ProcessingCodeBundle.INSTANCE.sampleCode(),()-> {
     processing.getInstance().textMethod("test");
 }; 
 ```
-For a more sophistaced example that shows how to interact with the Processing sketch (Callbacks, etc) refer to the [LDViewer visualization][6]
+For a more sophisticated example that shows how to interact with the Processing sketch (Callbacks, etc) refer to the [LDViewer visualization][6]
 
 
 ## How do I install it?
@@ -89,4 +89,3 @@ file like this:
 [3]: https://github.com/timeu/processing-js-gwt/tree/master/processingjs-gwt-sample
 [4]: http://www.gwtproject.org/release-notes.html#Release_Notes_2_7_0_RC1
 [5]: https://docs.google.com/document/d/1tir74SB-ZWrs-gQ8w-lOEV3oMY6u6lF2MmNivDEihZ4/edit#
-[6]: https://github.com/timeu/LDViewer
