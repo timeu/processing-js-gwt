@@ -1,8 +1,8 @@
 package com.github.timeu.gwtlibs.processingjsgwt.client;
 
-import com.google.gwt.core.client.js.JsType;
 import com.google.gwt.junit.client.GWTTestCase;
 import com.google.gwt.user.client.ui.RootPanel;
+import jsinterop.annotations.JsType;
 
 
 /**
@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 
 public class ProcessingTest extends GWTTestCase {
 
-    @JsType
+    @JsType(isNative = true)
     public interface MyProcessingInstance extends ProcessingInstance {
         String testMethod(String msg);
     }

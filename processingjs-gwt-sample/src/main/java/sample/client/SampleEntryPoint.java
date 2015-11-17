@@ -19,10 +19,11 @@ import com.github.timeu.gwtlibs.processingjsgwt.client.Processing;
 import com.github.timeu.gwtlibs.processingjsgwt.client.ProcessingInstance;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.js.JsType;
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.ExternalTextResource;
 import com.google.gwt.user.client.ui.RootPanel;
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
 
 /**
  * Initializes the application. Nothing to see here: everything interesting
@@ -30,7 +31,7 @@ import com.google.gwt.user.client.ui.RootPanel;
  */
 public class SampleEntryPoint implements EntryPoint {
 
-    @JsType
+    @JsType(isNative = true)
     public interface MyCustomInstance extends ProcessingInstance {
         String testMethod(String msg);
     }

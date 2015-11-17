@@ -109,7 +109,7 @@
                 <plugin>
                     <groupId>net.ltgt.gwt.maven</groupId>
                     <artifactId>gwt-maven-plugin</artifactId>
-                    <version>1.0-rc-2</version>
+                    <version>1.0-rc-4</version>
                     <extensions>true</extensions>
                     <configuration>
                         <devMode>false</devMode>
@@ -118,23 +118,23 @@
                             <arg>-runStyle</arg>
                             <arg>Manual:1</arg>
                             <arg>-XjsInteropMode</arg>
-                            <arg>JS</arg>
+                            <arg>JS_RC</arg>
                         </testArgs>
                         <startupUrls>
                             <startupUrl>processingjsgwtsample/index.html</startupUrl>
                         </startupUrls>
                         <compilerArgs>
                             <compilerArg>-XjsInteropMode</compilerArg>
-                            <compilerArg>JS</compilerArg>
+                            <compilerArg>JS_RC</compilerArg>
                         </compilerArgs>
                         <devmodeArgs>
                             <arg>-XjsInteropMode</arg>
-                            <arg>JS</arg>
+                            <arg>JS_RC</arg>
                             <devmodeArg>-incremental</devmodeArg>
                         </devmodeArgs>
                         <codeserverArgs>
                             <arg>-XjsInteropMode</arg>
-                            <arg>JS</arg>
+                            <arg>JS_RC</arg>
                             <arg>-incremental</arg>
                         </codeserverArgs>
                         <moduleName>${gwt.module}</moduleName>

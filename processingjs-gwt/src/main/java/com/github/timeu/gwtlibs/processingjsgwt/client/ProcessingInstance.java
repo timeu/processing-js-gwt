@@ -1,7 +1,8 @@
 package com.github.timeu.gwtlibs.processingjsgwt.client;
 
-import com.google.gwt.core.client.js.JsType;
 
+import jsinterop.annotations.JsPackage;
+import jsinterop.annotations.JsType;
 
 /**
  * ProcessingInstance is the base class that is used to interface with the ProcessingJS sketch.
@@ -9,7 +10,7 @@ import com.google.gwt.core.client.js.JsType;
  * Users should create their own custom interface extending ProcessingInstance and define the API methods
  * similar to draw and size. The custom interface must be annotated with {@link @JsType}
  */
-@JsType
+@JsType(isNative = true,namespace = JsPackage.GLOBAL,name="Processing")
 public interface ProcessingInstance {
 
 	/**
