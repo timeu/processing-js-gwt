@@ -117,24 +117,20 @@
                         <testArgs>
                             <arg>-runStyle</arg>
                             <arg>Manual:1</arg>
-                            <arg>-XjsInteropMode</arg>
-                            <arg>JS_RC</arg>
+                            <arg>-generateJsInteropExports</arg>
                         </testArgs>
                         <startupUrls>
                             <startupUrl>processingjsgwtsample/index.html</startupUrl>
                         </startupUrls>
                         <compilerArgs>
-                            <compilerArg>-XjsInteropMode</compilerArg>
-                            <compilerArg>JS_RC</compilerArg>
+                            <compilerArg>-generateJsInteropExports</compilerArg>
                         </compilerArgs>
                         <devmodeArgs>
-                            <arg>-XjsInteropMode</arg>
-                            <arg>JS_RC</arg>
+                            <arg>-generateJsInteropExports</arg>
                             <devmodeArg>-incremental</devmodeArg>
                         </devmodeArgs>
                         <codeserverArgs>
-                            <arg>-XjsInteropMode</arg>
-                            <arg>JS_RC</arg>
+                            <arg>-generateJsInteropExports</arg>
                             <arg>-incremental</arg>
                         </codeserverArgs>
                         <moduleName>${gwt.module}</moduleName>
