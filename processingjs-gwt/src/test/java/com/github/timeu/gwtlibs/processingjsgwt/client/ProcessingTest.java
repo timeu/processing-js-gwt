@@ -48,7 +48,7 @@ public class ProcessingTest extends GWTTestCase {
     }
 
     public void testLoadCode() {
-        Processing<MyProcessingInstance> widget = new Processing<>();
+        final Processing<MyProcessingInstance> widget = new Processing<>();
         RootPanel.get().add(widget);
         Runnable runnable = new Runnable() {
             @Override
