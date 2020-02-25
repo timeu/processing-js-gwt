@@ -3,7 +3,7 @@
     <parent>
         <groupId>com.github.timeu.gwt-libs.processingjs-gwt</groupId>
         <artifactId>processingjs-gwt-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>processingjs-gwt</artifactId>
