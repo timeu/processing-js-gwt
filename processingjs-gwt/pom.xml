@@ -9,6 +9,7 @@
     <artifactId>processingjs-gwt</artifactId>
     <packaging>gwt-lib</packaging>
     <name>Processingjs-GWT</name>
+    <description>A GWT wrapper for the Processing library (Core library)</description>
 
     <build>
         <plugins>
